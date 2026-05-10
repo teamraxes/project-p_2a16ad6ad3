@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120">
+  <rect width="600" height="120" fill="#FAF7F0"></rect>
+  <text x="40" y="78" font-family="Cormorant Garamond, serif" font-size="64" font-style="italic" fill="#1F1B16">Daniel Moran</text>
+  <rect x="40" y="92" width="120" height="6" fill="#1F3A2E"></rect>
+</svg>

@@ -1,0 +1,117 @@
+{
+  "project_id": "p_2a16ad6ad3",
+  "schema_version": "3.1",
+  "generated_at": "2026-05-09T23:10:00Z",
+  "skill_version": "synthesizer@1.0.0 (Phase 1 MVP)",
+  "selected_base_synth": "synthesis",
+  "style_dimensions": {
+    "formality": 0.75,
+    "density": 0.45,
+    "decoration": 0.1,
+    "energy": 0.35,
+    "era_reference": "2024-editorial",
+    "color_temperature": "warm"
+  },
+  "color_tokens": {
+    "primary": "#EB0000",
+    "surface": "#F5F0E8",
+    "surface_alt": "#FFFFFF",
+    "text": "#0A0A0A",
+    "text_muted": "#5A5854",
+    "accent_secondary": "#1F3A2E",
+    "border": "#E2DCD0"
+  },
+  "typography": {
+    "display": {
+      "family": "Cormorant Garamond",
+      "weights": [500, 600, 700],
+      "license": "google-fonts",
+      "google_fonts_url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    },
+    "body": {
+      "family": "Source Serif Pro",
+      "weights": [400, 600],
+      "license": "google-fonts",
+      "google_fonts_url": "https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap"
+    },
+    "mono": null
+  },
+  "structure": {
+    "page_strategy": "single",
+    "responsiveness_strategy": "single_responsive",
+    "rationale": "Landing tariff: one CTA-driven page concentrating all credibility (heritage, brand portfolio, two physical showrooms, contact) toward a single conversion goal — drive Oakland walk-in foot traffic to the Kohler Showroom at 415 40th Street.",
+    "sitemap": [
+      {
+        "slug": "home",
+        "role": "landing",
+        "viewport": "responsive",
+        "is_unique": true,
+        "sections": [
+          {
+            "role": "hero",
+            "name": "Hero",
+            "purpose": "Anchor message — 'Specialty plumbing for the East Bay since 1980' — with primary CTA to visit the Kohler Showroom; rejects the category-default emergency-call hero pattern.",
+            "media_role": "hero_image"
+          },
+          {
+            "role": "brands",
+            "name": "Brands We Carry",
+            "purpose": "Kohler, Grohe, A.O. Smith, Takagi — paired with the product category each brand covers (kitchen/bath fixtures, faucet/shower systems, tankless water heaters). Merges brief's required `brands` and `what_we_sell` into one section to respect landing's 5-section ceiling.",
+            "media_role": "feature_icons"
+          },
+          {
+            "role": "showrooms",
+            "name": "Two Showrooms in Oakland",
+            "purpose": "Treat the Kohler Showroom and Bathroom Showroom as a physical destination — fixture vignettes from inside 415 40th Street, framed as 'come touch the premium brands' rather than a paragraph mention.",
+            "media_role": "hero_image"
+          },
+          {
+            "role": "family_history",
+            "name": "Three Generations on 40th Street",
+            "purpose": "Forty-six years, same East Bay block, third-generation family ownership — heritage as visual structure (founding year, named generations) instead of buried About-page paragraph. Load-bearing trust signal vs. franchise rollups and big-box.",
+            "media_role": "none"
+          },
+          {
+            "role": "contact",
+            "name": "Visit or Call",
+            "purpose": "Address, Mon–Fri 7:00–4:30 hours, phone 510-652-7437 (contractor-priority), and a low-key custom-request form. Phone-first secondary CTA respects how trade buyers actually transact.",
+            "media_role": "none"
+          }
+        ]
+      }
+    ]
+  },
+  "image_briefs": [
+    {
+      "role": "hero_main",
+      "type": "photo",
+      "default_dimensions": "1920x1080",
+      "prompt_seed": "Editorial interior vignette inside an Oakland specialty plumbing showroom: a polished Kohler chrome and brass kitchen faucet on a honed soapstone counter, late-afternoon warm side light from an industrial-sash window, soft shadow on a cream plaster wall, a single neatly coiled copper supply line catching highlight in the foreground; restrained, magazine-quality, no people, no stock-photo smile, no plumbing-clipart props, no blue-and-white retail signage. Mood: trade-grounded heritage, third-generation specialty supplier — not a chain store.",
+      "model": "google/gemini-3.1-flash-image-preview",
+      "viewport_variants": [
+        {
+          "viewport": "desktop",
+          "aspect_ratio": "16:9",
+          "exact_dimensions": "1920x1080",
+          "crop_intent": "subject_centered"
+        },
+        {
+          "viewport": "tablet",
+          "aspect_ratio": "4:3",
+          "exact_dimensions": "1024x768",
+          "crop_intent": "subject_centered"
+        },
+        {
+          "viewport": "mobile",
+          "aspect_ratio": "9:16",
+          "exact_dimensions": "1080x1920",
+          "crop_intent": "subject_centered"
+        }
+      ],
+      "used_in_pages": ["home"]
+    }
+  ],
+  "video_briefs": [],
+  "composition": {},
+  "arbiter_reasoning": "Phase 1 single Synthesizer (no trio + Arbiter yet) with conscious deviation from the hardcoded conservative vector. The brief and niche intel jointly mandate an editorial-heritage direction that the default 60s-swiss-modernism / neutral-temperature preset would actively contradict: warm cream base, trade serif wordmark in the Cormorant/Domaine/Tiempos family, deep forest-green 'trade trust' accent, and explicit anti-Inter / anti-modern-SaaS-sans guidance. Accordingly: era_reference = 2024-editorial (heritage typographic restraint), color_temperature = warm, formality dialed to 0.75 (trade authority but neighborly tone-keyword), decoration held at 0.1 (anti-clipart, anti-1990s tropes), energy at 0.35 (restraint over enthusiasm). Typography mapped to open-source proxies — Cormorant Garamond for display (faithful to the requested Cormorant family, Google Fonts) and Source Serif Pro for body (sustains editorial register without violating the 'no Inter / no modern SaaS sans' rule for a non-tech-B2B niche). Color tokens preserve the BelBes #EB0000 invariant as `primary` while the brief's dark accent (#1F3A2E forest green) lives in `accent_secondary` and Kohler-black (#0A0A0A) carries body text — all consistent with 'no bright gradients, no neons.' Sitemap collapses the brief's six required_sections to five (`brands` absorbs `what_we_sell`) to respect the landing-tariff section ceiling without losing brand-portfolio surface area; merger documented above. Composition deliberately left empty per COMP-001/COMP-002 sequencing — no component IDs invented."
+}

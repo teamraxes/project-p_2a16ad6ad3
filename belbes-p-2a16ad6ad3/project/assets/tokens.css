@@ -1,0 +1,215 @@
+/* ============================================================
+   Daniel Moran — Colors & Type
+   Specialty plumbing for the East Bay since 1980
+   ============================================================ */
+
+/* ---------- Webfonts ---------- */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Serif Pro";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/source-serif-pro-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Serif Pro";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/source-serif-pro-600.woff2") format("woff2");
+}
+
+:root {
+  /* ---------- Color tokens (raw) ---------- */
+  --dm-cream:        #F5F0E8;   /* canvas / page surface */
+  --dm-cream-2:      #EFE9DD;   /* recessed surface, table stripes */
+  --dm-paper:        #FAF7F0;   /* cards, lifted surfaces */
+  --dm-ink:          #0A0A0A;   /* primary text */
+  --dm-ink-2:        #2B2B2A;   /* heavy body */
+  --dm-mute:         #5A5854;   /* muted text, captions */
+  --dm-rule:         #E2DCD0;   /* hairline borders */
+  --dm-rule-2:       #C9C2B2;   /* heavier borders */
+
+  --dm-red:          #EB0000;   /* primary — sale tags, in-stock chips, key CTA */
+  --dm-red-ink:      #B30000;   /* hover/pressed red on cream */
+  --dm-forest:       #1F3A2E;   /* accent — secondary CTA, headings ornaments */
+  --dm-forest-2:     #15281F;   /* deeper green for footers */
+  --dm-brass:        #B08A3E;   /* hardware/brass accent — used VERY sparingly */
+
+  /* status / utility */
+  --dm-stock:        #1F3A2E;   /* "In stock" green */
+  --dm-low:          #B08A3E;   /* "Low stock" brass */
+  --dm-out:          #8A1A1A;   /* "Out of stock" deep red */
+
+  /* ---------- Semantic surfaces ---------- */
+  --bg-page:         var(--dm-cream);
+  --bg-recess:       var(--dm-cream-2);
+  --bg-card:         var(--dm-paper);
+  --bg-inverse:      var(--dm-forest-2);
+
+  --fg-primary:      var(--dm-ink);
+  --fg-body:         var(--dm-ink-2);
+  --fg-muted:        var(--dm-mute);
+  --fg-on-inverse:   var(--dm-cream);
+
+  --border-hair:     var(--dm-rule);
+  --border-strong:   var(--dm-rule-2);
+
+  --accent-primary:  var(--dm-red);
+  --accent-primary-hover: var(--dm-red-ink);
+  --accent-secondary: var(--dm-forest);
+
+  /* ---------- Typography families ---------- */
+  --font-display: "Cormorant Garamond", "EB Garamond", "Garamond", "Times New Roman", serif;
+  --font-body:    "Source Serif Pro", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* ---------- Type scale (clamp-based) ---------- */
+  --fs-display-xl: clamp(64px, 9vw, 144px);   /* hero h1 */
+  --fs-display-l:  clamp(48px, 6vw, 96px);    /* section heroes */
+  --fs-display-m:  clamp(36px, 4.2vw, 64px);  /* page titles */
+  --fs-display-s:  clamp(28px, 3vw, 44px);    /* sub heroes */
+  --fs-h1: 44px;
+  --fs-h2: 32px;
+  --fs-h3: 24px;
+  --fs-h4: 19px;
+  --fs-body-lg: 19px;
+  --fs-body:    17px;
+  --fs-body-sm: 15px;
+  --fs-caption: 13px;
+  --fs-eyebrow: 12px;
+
+  /* ---------- Tracking ---------- */
+  --tr-display: -0.02em;     /* tight on big serif */
+  --tr-tight:   -0.01em;
+  --tr-normal:  0em;
+  --tr-eyebrow: 0.16em;      /* SMALLCAPS-style labels */
+
+  /* ---------- Line heights ---------- */
+  --lh-display: 0.98;
+  --lh-tight:   1.12;
+  --lh-snug:    1.3;
+  --lh-body:    1.55;
+  --lh-loose:   1.7;
+
+  /* ---------- Spacing (8pt base, generous) ---------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+  --sp-11: 192px;
+
+  /* ---------- Radii ---------- */
+  --r-0: 0px;       /* default — editorial discipline, mostly square */
+  --r-1: 2px;       /* hairline rounding for inputs */
+  --r-2: 4px;       /* chips, badges */
+  --r-pill: 999px;  /* category pills */
+
+  /* ---------- Borders & shadows ---------- */
+  --bw-hair: 1px;
+  --bw-rule: 1.5px;
+
+  --shadow-0: none;
+  --shadow-1: 0 1px 0 rgba(31, 58, 46, 0.04);                       /* hairline lift */
+  --shadow-2: 0 1px 2px rgba(10,10,10,0.06), 0 8px 24px rgba(10,10,10,0.04);  /* card */
+  --shadow-3: 0 2px 4px rgba(10,10,10,0.08), 0 24px 48px rgba(10,10,10,0.08); /* modal */
+
+  /* ---------- Motion ---------- */
+  --ease-quiet:   cubic-bezier(0.25, 0.10, 0.25, 1.00);
+  --ease-firm:    cubic-bezier(0.20, 0.00, 0.10, 1.00);
+  --dur-quick:    180ms;
+  --dur-base:     320ms;
+  --dur-slow:     680ms;
+
+  /* ---------- Layout ---------- */
+  --container-max: 1320px;
+  --container-pad: clamp(20px, 4vw, 48px);
+  --rule-color: var(--border-hair);
+}
+
+/* ---------- Base element styles (drop-in) ---------- */
+html, body {
+  background: var(--bg-page);
+  color: var(--fg-body);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .h-display {
+  font-family: var(--font-display);
+  color: var(--fg-primary);
+  font-weight: 500;
+  letter-spacing: var(--tr-display);
+  line-height: var(--lh-display);
+  margin: 0;
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-display-l); font-weight: 500; }
+h2 { font-size: var(--fs-display-m); font-weight: 500; }
+h3 { font-size: var(--fs-h2); font-weight: 600; line-height: var(--lh-tight); letter-spacing: var(--tr-tight); }
+h4 { font-size: var(--fs-h3); font-weight: 600; line-height: var(--lh-snug); letter-spacing: var(--tr-tight); }
+
+.h-italic { font-style: italic; font-weight: 500; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-eyebrow);
+  color: var(--fg-muted);
+  font-weight: 600;
+}
+
+p, .p { font-size: var(--fs-body); line-height: var(--lh-body); color: var(--fg-body); text-wrap: pretty; margin: 0; }
+.p-lg { font-size: var(--fs-body-lg); line-height: var(--lh-snug); }
+.p-sm { font-size: var(--fs-body-sm); }
+.caption { font-size: var(--fs-caption); color: var(--fg-muted); }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-primary);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  transition: color var(--dur-quick) var(--ease-quiet);
+}
+a:hover { color: var(--accent-primary); }
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--border-hair);
+  margin: var(--sp-7) 0;
+}
+
+::selection { background: var(--dm-red); color: var(--dm-cream); }
