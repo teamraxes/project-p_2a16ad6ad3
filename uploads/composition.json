@@ -1,0 +1,143 @@
+{
+  "selected_components": {
+    "typography_system": "cmp_editorial_serif_italic@1.0.0",
+    "grid_logic": "cmp_full_bleed_editorial_pacing@1.0.0",
+    "color_treatment": "cmp_monochromatic_palette_temperature_accent@1.0.0",
+    "decoration_density": "cmp_austere_zero_ornament@1.0.0",
+    "motion_signature": "cmp_restrained_fade@1.0.0",
+    "composition_philosophy": "cmp_editorial_magazine_pacing@1.0.0"
+  },
+  "rationale_per_axis": {
+    "typography_system": "cmp_editorial_serif_italic (score 0.646) — distance=0.993, niche_affinity[plumbing-supply]=0.50, anchor_bonus=0.00",
+    "grid_logic": "cmp_full_bleed_editorial_pacing (score 0.630) — distance=0.960, niche_affinity[plumbing-supply]=0.50, anchor_bonus=0.00",
+    "color_treatment": "cmp_monochromatic_palette_temperature_accent (score 0.644) — distance=0.988, niche_affinity[plumbing-supply]=0.50, anchor_bonus=0.00",
+    "decoration_density": "cmp_austere_zero_ornament (score 0.645) — distance=0.990, niche_affinity[plumbing-supply]=0.50, anchor_bonus=0.00",
+    "motion_signature": "cmp_restrained_fade (score 0.643) — distance=0.987, niche_affinity[plumbing-supply]=0.50, anchor_bonus=0.00",
+    "composition_philosophy": "cmp_editorial_magazine_pacing (score 0.646) — distance=0.993, niche_affinity[plumbing-supply]=0.50, anchor_bonus=0.00"
+  },
+  "consistency_score": 1.0,
+  "consistency_violations": [],
+  "alternatives_considered": [
+    {
+      "axis": "grid_logic",
+      "candidates": [
+        {
+          "component_id": "cmp_full_bleed_editorial_pacing",
+          "score": 0.63,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_tile_pattern_apothecary_grid",
+          "score": 0.6295,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_alternating_section_color_rhythm",
+          "score": 0.6252,
+          "rejected_because": null
+        }
+      ]
+    },
+    {
+      "axis": "composition_philosophy",
+      "candidates": [
+        {
+          "component_id": "cmp_editorial_magazine_pacing",
+          "score": 0.6464,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_anti_category_dismissal_opener",
+          "score": 0.6219,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_atmosphere_led_single_cta",
+          "score": 0.6029,
+          "rejected_because": null
+        }
+      ]
+    },
+    {
+      "axis": "color_treatment",
+      "candidates": [
+        {
+          "component_id": "cmp_monochromatic_palette_temperature_accent",
+          "score": 0.6438,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_dark_canvas_atmospheric",
+          "score": 0.6226,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_warm_cream_canvas_single_accent",
+          "score": 0.6027,
+          "rejected_because": null
+        }
+      ]
+    },
+    {
+      "axis": "decoration_density",
+      "candidates": [
+        {
+          "component_id": "cmp_austere_zero_ornament",
+          "score": 0.645,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_atmospheric_photo_hero",
+          "score": 0.6223,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_textural_brand_artifact",
+          "score": 0.5865,
+          "rejected_because": null
+        }
+      ]
+    },
+    {
+      "axis": "typography_system",
+      "candidates": [
+        {
+          "component_id": "cmp_editorial_serif_italic",
+          "score": 0.6464,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_heavy_grotesque_tight_tracking",
+          "score": 0.6226,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_custom_display_cultural_signature",
+          "score": 0.6043,
+          "rejected_because": null
+        }
+      ]
+    },
+    {
+      "axis": "motion_signature",
+      "candidates": [
+        {
+          "component_id": "cmp_restrained_fade",
+          "score": 0.6433,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_video_hero_ambient",
+          "score": 0.6429,
+          "rejected_because": null
+        },
+        {
+          "component_id": "cmp_floating_persistent_ui",
+          "score": 0.6105,
+          "rejected_because": null
+        }
+      ]
+    }
+  ],
+  "arbiter_override": null
+}

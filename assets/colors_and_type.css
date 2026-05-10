@@ -1,0 +1,271 @@
+/* ============================================================
+   Daniel Moran — Foundations
+   Specialty plumbing, East Bay since 1980.
+   Editorial discipline. Warm canvas. Single accent.
+   ============================================================ */
+
+/* ---------- Webfonts ---------- */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/cormorant-garamond-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/cormorant-garamond-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/cormorant-garamond-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/cormorant-garamond-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/cormorant-garamond-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/source-serif-pro-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/source-serif-pro-600.woff2") format("woff2");
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  /* Color — base palette */
+  --dm-red:        #EB0000;  /* brand invariant — sparingly */
+  --dm-cream:      #F5F0E8;  /* default canvas */
+  --dm-paper:     #FAF7F0;   /* alt surface, panels */
+  --dm-white:     #FFFFFF;   /* hard surfaces (specs, tables) */
+  --dm-ink:       #0A0A0A;   /* primary text */
+  --dm-ink-2:     #5A5854;   /* muted text */
+  --dm-forest:    #1F3A2E;   /* accent — deep green */
+  --dm-forest-2:  #2E5443;   /* accent hover */
+  --dm-rule:      #E2DCD0;   /* hairlines, dividers */
+  --dm-rule-strong:#1F1B16;  /* heavy rules, captions */
+
+  /* Color — semantic */
+  --bg:            var(--dm-cream);
+  --bg-alt:        var(--dm-paper);
+  --bg-hard:       var(--dm-white);
+  --fg:            var(--dm-ink);
+  --fg-muted:      var(--dm-ink-2);
+  --fg-on-dark:    #F5F0E8;
+  --accent:        var(--dm-forest);
+  --accent-hover:  var(--dm-forest-2);
+  --primary:       var(--dm-red);
+  --border:        var(--dm-rule);
+  --border-strong: var(--dm-rule-strong);
+
+  /* Type families */
+  --font-display: "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", serif;
+  --font-body:    "Source Serif Pro", "Source Serif", Georgia, "Times New Roman", serif;
+
+  /* Type scale — editorial, clamp-driven */
+  --fs-display:   clamp(3.5rem, 6vw + 1rem, 7.5rem);   /* 56 → 120 */
+  --fs-h1:        clamp(2.75rem, 3.5vw + 1rem, 4.75rem); /* 44 → 76 */
+  --fs-h2:        clamp(2rem, 2vw + 1rem, 3rem);         /* 32 → 48 */
+  --fs-h3:        clamp(1.5rem, 1vw + 1rem, 2rem);       /* 24 → 32 */
+  --fs-h4:        1.25rem;   /* 20 */
+  --fs-lede:      clamp(1.125rem, 0.4vw + 1rem, 1.375rem); /* 18 → 22 */
+  --fs-body:      1.0625rem; /* 17 */
+  --fs-small:     0.9375rem; /* 15 */
+  --fs-caption:   0.8125rem; /* 13 */
+  --fs-label:     0.75rem;   /* 12 — eyebrows, ALL CAPS */
+
+  /* Line-height */
+  --lh-display:   0.98;
+  --lh-tight:     1.05;
+  --lh-snug:      1.2;
+  --lh-body:      1.55;
+  --lh-loose:     1.7;
+
+  /* Tracking */
+  --tr-display:  -0.02em;
+  --tr-tight:    -0.01em;
+  --tr-flat:      0;
+  --tr-eyebrow:   0.14em;
+
+  /* Spacing — 4pt scale, with editorial margin */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --gutter:    clamp(1.25rem, 3vw, 2.5rem);
+  --section-y: clamp(4rem, 8vw, 8rem);
+  --max-w:     1280px;
+  --max-w-prose: 64ch;
+
+  /* Borders & rules */
+  --hairline: 1px solid var(--border);
+  --rule:     1px solid var(--border-strong);
+  --rule-2:   2px solid var(--border-strong);
+  --radius:   0;        /* editorial — square by default */
+  --radius-sm: 2px;     /* used on inputs/chips only */
+
+  /* Shadow — minimal. Editorial doesn't use drop shadows. */
+  --shadow-none: none;
+  --shadow-press: inset 0 0 0 1px var(--border-strong);
+
+  /* Motion */
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --dur-fast: 180ms;
+  --dur:      300ms;
+  --dur-slow: 700ms;
+}
+
+/* ---------- Base reset (lightweight) ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--dm-forest); color: var(--dm-cream); }
+
+/* ---------- Type primitives ---------- */
+.dm-display, .dm-h1, .dm-h2, .dm-h3, h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--fg);
+  text-wrap: balance;
+}
+
+.dm-display {
+  font-size: var(--fs-display);
+  font-weight: 500;
+  line-height: var(--lh-display);
+  letter-spacing: var(--tr-display);
+}
+
+h1, .dm-h1 {
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  margin: 0 0 var(--space-5);
+}
+
+h2, .dm-h2 {
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  margin: 0 0 var(--space-4);
+}
+
+h3, .dm-h3 {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-tight);
+  margin: 0 0 var(--space-3);
+}
+
+h4, .dm-h4 {
+  font-family: var(--font-body);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  letter-spacing: 0;
+  margin: 0 0 var(--space-3);
+}
+
+.dm-italic-display {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+}
+
+p, .dm-body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg);
+  max-width: var(--max-w-prose);
+  margin: 0 0 var(--space-4);
+  text-wrap: pretty;
+}
+
+.dm-lede {
+  font-family: var(--font-body);
+  font-size: var(--fs-lede);
+  line-height: 1.45;
+  color: var(--fg);
+  max-width: 50ch;
+}
+
+.dm-small  { font-size: var(--fs-small); line-height: 1.5; color: var(--fg-muted); }
+.dm-caption{ font-size: var(--fs-caption); line-height: 1.4; color: var(--fg-muted); }
+
+.dm-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.dm-eyebrow::before {
+  content: "";
+  width: 24px; height: 1px; background: currentColor;
+  display: inline-block;
+}
+
+.dm-italic-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--fs-h4);
+  color: var(--accent);
+}
+
+a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color var(--dur-fast) var(--ease); }
+a:hover { color: var(--accent); }
+
+hr { border: 0; border-top: var(--hairline); margin: var(--space-7) 0; }
